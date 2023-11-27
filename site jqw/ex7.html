@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Manipulação de Vetor</title>
+</head>
+<body style="background-color: azure">
+ 
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark"> 
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="jogo.html">jogo</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    exercicios
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="ex1.html">exercicio 1</a></li>
+                    <li><a class="dropdown-item" href="ex2.html">exercicio 2</a></li>
+                    <li><a class="dropdown-item" href="ex3.html">exercicio 3</a></li>
+                    <li><a class="dropdown-item" href="ex4.html">exercicio 4</a></li>
+                    <li><a class="dropdown-item" href="ex5.html">exercicio 5</a></li>
+                    <li><a class="dropdown-item" href="ex6.html">exercicio 6</a></li>
+                    <li><a class="dropdown-item" href="ex7.html">exercicio 7</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+    <label for="inputValor">Digite um valor:</label>
+    <input type="number" id="inputValor">
+    <button onclick="adicionarValor()">Adicionar Valor</button>
+ 
+    <button onclick="mostrarValores()">Mostrar Valores</button>
+    <button onclick="mostrarMaiorValor()">Maior Valor</button>
+    <button onclick="mostrarMenorValor()">Menor Valor</button>
+ 
+    <div id="resultado"></div>
+ 
+    <script>
+        var vetor = [];
+ 
+        function adicionarValor() {
+            var valor = $('#inputValor').val();
+            vetor.push(parseFloat(valor));
+            $('#inputValor').val(''); 
+        }
+ 
+        function mostrarValores() {
+            $('#resultado').html('<p>Valores inseridos: ' + vetor.join(', ') + '</p>');
+        }
+ 
+        function mostrarMaiorValor() {
+            var maiorValor = Math.max(...vetor);
+            $('#resultado').html('<p>Maior valor: ' + maiorValor + '</p>');
+        }
+ 
+        function mostrarMenorValor() {
+            var menorValor = Math.min(...vetor);
+            $('#resultado').html('<p>Menor valor: ' + menorValor + '</p>');
+        }
+    </script>
+ 
+</body>
+</html>
